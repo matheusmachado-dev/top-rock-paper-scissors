@@ -4,7 +4,24 @@ let computerScore = 0;
 console.log("Computer Score: " + computerScore);
 console.log("Human Score: " + humanScore);
 
-playGame();
+const rockBtn = document.querySelector("#rock-btn");
+const paperBtn = document.querySelector("#paper-btn");
+const scissorsBtn = document.querySelector("#scissors-btn");
+
+rockBtn.addEventListener("click", (e) => {
+  const computerChoice = getComputerChoice();
+  playRound("rock", computerChoice);
+});
+
+paperBtn.addEventListener("click", (e) => {
+  const computerChoice = getComputerChoice();
+  playRound("paper", computerChoice);
+});
+
+scissorsBtn.addEventListener("click", (e) => {
+  const computerChoice = getComputerChoice();
+  playRound("scissors", computerChoice);
+});
 
 function getComputerChoice() {
   const randomNumber = Math.floor(Math.random() * 3);
