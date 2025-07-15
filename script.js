@@ -8,16 +8,17 @@ const rockBtn = document.querySelector("#rock-btn");
 const paperBtn = document.querySelector("#paper-btn");
 const scissorsBtn = document.querySelector("#scissors-btn");
 
+const humanScoreElement = document.querySelector("#human-score");
+const computerScoreElement = document.querySelector("#computer-score");
+
 rockBtn.addEventListener("click", (e) => {
   const computerChoice = getComputerChoice();
   playRound("rock", computerChoice);
 });
-
 paperBtn.addEventListener("click", (e) => {
   const computerChoice = getComputerChoice();
   playRound("paper", computerChoice);
 });
-
 scissorsBtn.addEventListener("click", (e) => {
   const computerChoice = getComputerChoice();
   playRound("scissors", computerChoice);
@@ -33,7 +34,6 @@ function getComputerChoice() {
   }
   return "scissors";
 }
-
 function getHumanChoice() {
   return prompt("Choose between rock, paper, or scissors");
 }
@@ -43,29 +43,38 @@ function playRound(humanChoice, computerChoice) {
 
   if (sanitizedHumanChoice === "rock" && computerChoice === "scissors") {
     humanScore++;
-    return console.log(
-      "You won the round!\n" + humanChoice + " beats " + computerChoice
-    );
+    humanScoreElement.textContent = "You: " + humanScore;
+    getWinner();
+    return;
   }
   if (sanitizedHumanChoice === "scissors" && computerChoice === "paper") {
     humanScore++;
-    return console.log(
-      "You won the round!\n" + humanChoice + " beats " + computerChoice
-    );
+    humanScoreElement.textContent = "You: " + humanScore;
+    getWinner();
+    return;
   }
   if (sanitizedHumanChoice === "paper" && computerChoice === "rock") {
     humanScore++;
-    return console.log(
-      "You won the round!\n" + humanChoice + " beats " + computerChoice
-    );
+    humanScoreElement.textContent = "You: " + humanScore;
+    getWinner();
+    return;
   }
   if (sanitizedHumanChoice === computerChoice) {
     return console.log("Draw!\nNobody won the round");
   }
   computerScore++;
-  return console.log(
-    "You lost the round!\n" + computerChoice + " beats " + humanChoice
-  );
+  computerScoreElement.textContent = "Computer: " + computerScore;
+  getWinner();
+  return;
+}
+
+function getWinner() {
+  if (humanScore === 5) {
+    console.log("Player won!");
+  }
+  if (computerScore === 5) {
+    console.log("Computer won!");
+  }
 }
 
 function sanitizeHumanChoice(humanChoice) {
