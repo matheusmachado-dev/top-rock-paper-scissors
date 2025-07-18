@@ -5,9 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
   </head>
   <body>
     <h1>Rock, Paper, Scissors</h1>
+    <p>
+      A game of rock, paper, scissors against the computer. The first one to
+      reach 5 points wins.
+    </p>
+    <button id="reset-btn" class="disabled">Play Again!</button>
+    <h2>Scoreboard</h2>
+    <div id="scoreboard">
+      <p id="human-score">You: 0</p>
+      <p id="computer-score">Computer: 0</p>
+    </div>
+    <div id="container-board">
+      <h2 id="round">Round: 1</h2>
+      <div id="container-choices">
+        <h3>Make your choice:</h3>
+        <div class="container">
+          <button id="rock-btn">
+            <span style="font-size: 46px">&#9994;</span><br />Rock
+          </button>
+          <button id="paper-btn">
+            <span style="font-size: 46px">&#9995;</span><br />Paper
+          </button>
+          <button id="scissors-btn">
+            <span style="font-size: 46px">&#9996;</span><br />Scissors
+          </button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2>Results</h2>
+      <div id="results-board"></div>
+    </div>
   </body>
 </html>
