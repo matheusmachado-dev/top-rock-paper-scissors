@@ -2,10 +2,11 @@
 
 ## Overview
 
-A lightweight **Rock, Paper, Scissors** game coded for the [The Odin Project - Foundations Course](https://www.theodinproject.com/paths/foundations/courses/foundations). The goal is to deepen JavaScript skills by creating a fully functional game that runs in the browser console.
+A lightweight **Rock, Paper, Scissors** game coded for the [The Odin Project - Foundations Course](https://www.theodinproject.com/paths/foundations/courses/foundations). The goal is to deepen JavaScript skills by creating a fully functional game.
 
-## Features
+## How to Play
 
-- Complete game loop: best-of-five rounds versus the computer
-- Clean, modular functions for easier extension or refactor
-- Interaction via `prompt` and instant results in DevTools
+- **Open `index.html`** in any browser.
+- Click **Rock**, **Paper** or **Scissors**.
+- Watch the scoreboard climb. The first to reach 5 points win.
+- Hit **Play Again** o reset scores and start over.
